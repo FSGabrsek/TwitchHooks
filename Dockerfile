@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["TwitchHooks.API/TwitchHooks.API.csproj", "TwitchHooks.API/"]
-RUN dotnet restore "TwitchHooksAPI/TwitchHooksAPI.csproj"
+RUN dotnet restore "TwitchHooks.API/TwitchHooks.API.csproj"
 COPY . .
 WORKDIR "/src/TwitchHooks.API"
 RUN dotnet build "TwitchHooks.API.csproj" -c Release -o /app/build
