@@ -5,16 +5,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["TwitchHooksAPI/TwitchHooksAPI.csproj", "TwitchHooksAPI/"]
+COPY ["TwitchHooks.API/TwitchHooks.API.csproj", "TwitchHooks.API/"]
 RUN dotnet restore "TwitchHooksAPI/TwitchHooksAPI.csproj"
 COPY . .
-WORKDIR "/src/TwitchHooksAPI"
-RUN dotnet build "TwitchHooksAPI.csproj" -c Release -o /app/build
+WORKDIR "/src/TwitchHooks.API"
+RUN dotnet build "TwitchHooks.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "TwitchHooksAPI.csproj" -c Release -o /app/publish
+RUN dotnet publish "TwitchHooks.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "TwitchHooksAPI.dll"]
+ENTRYPOINT ["dotnet", "TwitchHooks.API.dll"]

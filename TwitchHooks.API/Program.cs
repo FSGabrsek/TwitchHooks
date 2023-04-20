@@ -1,16 +1,19 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using TwitchHooks.Application.Network;
 using TwitchHooks.Domain.Repositories;
 using TwitchHooks.Infrastructure;
-using TwitchHooks.Infrastructure.Authorisation;
 using TwitchHooks.Infrastructure.Repositories;
+using TwitchHooksAPI.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
+
 builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
 builder.Services.AddScoped<IWebhookRepository, WebhookRepository>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
@@ -49,8 +52,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationDbContext>(
+    (provider, optionsBuilder) =>
+    {
+        var options = provider.GetRequiredService<IOptions<DatabaseOptions>>().Value;
+        optionsBuilder.UseNpgsql(options.ConnectionString, contextOptionsBuilder =>
+        {
+            contextOptionsBuilder.EnableRetryOnFailure(options.MaxRetryCount);
+            contextOptionsBuilder.CommandTimeout(options.CommandTimeout);
+        });
+        optionsBuilder.EnableDetailedErrors(options.EnableDetailedErrors);
+        optionsBuilder.EnableSensitiveDataLogging(options.EnableSensitiveDataLogging);
+    });
 
 var app = builder.Build();
 
