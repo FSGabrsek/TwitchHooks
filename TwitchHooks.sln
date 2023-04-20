@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchHooks.API", "TwitchHooks.API\TwitchHooks.API.csproj", "{EC95FCA8-DA36-4F55-B59C-1378D852E9DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchHooks.Domain", "TwitchHooks.Domain\TwitchHooks.Domain.csproj", "{439272D0-38D3-40FF-8757-39B61587878F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchHooks.Persistence", "TwitchHooks.Persistence\TwitchHooks.Persistence.csproj", "{FC28079C-0713-4F4E-AE6B-86C13B112B46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchHooks.Infrastructure", "TwitchHooks.Infrastructure\TwitchHooks.Infrastructure.csproj", "{90861A93-B5D2-4E68-A778-B0D8CA481C79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchHooks.Application", "TwitchHooks.Application\TwitchHooks.Application.csproj", "{956A3D2B-7405-4208-BA68-A83FADED1714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC95FCA8-DA36-4F55-B59C-1378D852E9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC95FCA8-DA36-4F55-B59C-1378D852E9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC95FCA8-DA36-4F55-B59C-1378D852E9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC95FCA8-DA36-4F55-B59C-1378D852E9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{439272D0-38D3-40FF-8757-39B61587878F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439272D0-38D3-40FF-8757-39B61587878F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439272D0-38D3-40FF-8757-39B61587878F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439272D0-38D3-40FF-8757-39B61587878F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC28079C-0713-4F4E-AE6B-86C13B112B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC28079C-0713-4F4E-AE6B-86C13B112B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC28079C-0713-4F4E-AE6B-86C13B112B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC28079C-0713-4F4E-AE6B-86C13B112B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90861A93-B5D2-4E68-A778-B0D8CA481C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90861A93-B5D2-4E68-A778-B0D8CA481C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90861A93-B5D2-4E68-A778-B0D8CA481C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90861A93-B5D2-4E68-A778-B0D8CA481C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956A3D2B-7405-4208-BA68-A83FADED1714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956A3D2B-7405-4208-BA68-A83FADED1714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956A3D2B-7405-4208-BA68-A83FADED1714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956A3D2B-7405-4208-BA68-A83FADED1714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
