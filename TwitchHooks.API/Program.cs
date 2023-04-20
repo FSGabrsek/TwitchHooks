@@ -5,7 +5,6 @@ using Microsoft.IdentityModel.Tokens;
 using TwitchHooks.Application.Network;
 using TwitchHooks.Domain.Repositories;
 using TwitchHooks.Infrastructure;
-using TwitchHooks.Infrastructure.Authorisation;
 using TwitchHooks.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
