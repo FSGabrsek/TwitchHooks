@@ -35,8 +35,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "CLIENT_ID": "awuerl3qfy0a0tclbn9kqhrd3e5j1o",
-        "WEBHOOK_SECRET": "VcqYozFXAjDf93KocMYTbwAeVUw/pX6jyaspSgjBvKOvjbvejr+To8xWaWORJRMF4TkTgGuVnC3EiC9WR1edFQ=="
+        "CLIENT_ID": "awuerl3qfy0a0tclbn9kqhrd3e5j1o"
       }
     }
   }
