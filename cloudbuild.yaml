@@ -14,5 +14,7 @@
       - "twitchhooks"
       - "--image"
       - "gcr.io/$PROJECT_ID/$COMMIT_SHA"
+      - "--region"
+      - "$LOCATION"
 images:
   - "gcr.io/$PROJECT_ID/$COMMIT_SHA"
