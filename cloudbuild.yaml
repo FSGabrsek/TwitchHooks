@@ -15,6 +15,6 @@
       - "--image"
       - "gcr.io/$PROJECT_ID/$COMMIT_SHA"
       - "--region"
-      - "$LOCATION"
+      - "europe-west4"
 images:
   - "gcr.io/$PROJECT_ID/$COMMIT_SHA"
